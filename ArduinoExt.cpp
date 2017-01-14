@@ -1,6 +1,6 @@
 #include <Arduino.h>
 
-int boolToOutput(boolean state)
+int boolToPinState(bool state)
 {
   return state ? HIGH : LOW;
 }

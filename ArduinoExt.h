@@ -2,7 +2,7 @@
 #define LK_ARDEXT
 
 
-int boolToOutput(boolean state);
+int boolToPinState(bool state);
 
 
 #endif
