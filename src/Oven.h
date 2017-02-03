@@ -21,13 +21,13 @@ class Oven
 
 	private:
 		int     PIN_BTN_PWR,
+						PIN_LED_PWR,
+						PIN_LED_OVEN,
 		        PIN_BTN_ADD_1,
 		        PIN_BTN_ADD_10,
-		        PIN_BTN_RESET, 
-            PIN_LED_PWR, 
-            PIN_LED_OVEN,
+		        PIN_BTN_RESET,
             PIN_LED_DONE;
-		bool    on, hot;
+		bool    hot, on;
 		Bounce  debouncerOn;
     Bounce  add1Sec;
     Bounce  add10Sec;

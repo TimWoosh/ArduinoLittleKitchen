@@ -5,7 +5,6 @@
 #include <Arduino.h>
 #include <Bounce2.h>
 
-
 Oven::Oven(int pinBtnPwr, int pinLedPwr, int pinLedOven, int pinBtnAdd1, int pinBtnAdd10, int pinBtnReset, int pinLedDone)
 :	PIN_BTN_PWR(pinBtnPwr),
 	PIN_LED_PWR(pinLedPwr),
@@ -23,24 +22,24 @@ Oven::Oven(int pinBtnPwr, int pinLedPwr, int pinLedOven, int pinBtnAdd1, int pin
   pinMode(this->PIN_BTN_RESET, INPUT);
   pinMode(this->PIN_LED_PWR, OUTPUT);
   pinMode(this->PIN_LED_OVEN, OUTPUT);
-	
+
 	this->on = false;
 	this->hot = false;
 
   this->mTimer = Timer();
-  
+
 	this->debouncerOn = Bounce();
 	this->debouncerOn.attach(this->PIN_BTN_PWR);
 	this->debouncerOn.interval(5);
-  
+
   this->add1Sec = Bounce();
   this->add1Sec.attach(this->PIN_BTN_ADD_1);
   this->add1Sec.interval(5);
-  
+
   this->add10Sec = Bounce();
   this->add10Sec.attach(this->PIN_BTN_ADD_10);
   this->add10Sec.interval(5);
-  
+
   this->reset = Bounce();
   this->reset.attach(this->PIN_BTN_RESET);
   this->reset.interval(5);
@@ -107,5 +106,3 @@ void Oven::start()
 	this->hot = true;
   this->mTimer.start();
 }
-
-

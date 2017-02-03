@@ -27,12 +27,12 @@ int PIN_LED_DONE = 33;
 /**************************
  * Variables
  **************************/
-boolean stateOnOff = false; 
+boolean stateOnOff = false;
 int time = 0;
 
 
-Oven oven = Oven(PIN_BTN_ON_OFF, 
-                  PIN_LED_ON_OFF, 
+Oven oven = Oven(PIN_BTN_ON_OFF,
+                  PIN_LED_ON_OFF,
                   PIN_LED_OVEN,
                   PIN_BTN_ADD_1,
                   PIN_BTN_ADD_10,
@@ -51,7 +51,7 @@ void setup() {
 //  * Input pins
 //  *************************/
 //  pinMode(PIN_BTN_ON_OFF, INPUT);
-//  
+//
 //  /*************************
 //   * Output pins
 //   *************************/
@@ -63,10 +63,12 @@ void setup() {
 //   *************************/
 //  debouncerOnOff.attach(PIN_BTN_ON_OFF);
 //  debouncerOnOff.interval(5);
-  
+
   //digitalWrite(PIN_BTN_ON_OFF, stateOnOff);
 
   Serial.begin(9600);
+
+  //Test scenario normally only called by button inputs
   oven.pushAdd10Sec();
   oven.start();
 }
@@ -87,7 +89,7 @@ void loop() {
 //  int OnOffReadout = debouncerOnOff.read();
 //  boolean OnOffRose = debouncerOnOff.rose();
 
-  
+
 
   /************************
    * Process inputs
@@ -109,6 +111,3 @@ void loop() {
    */
 //  digitalWrite(PIN_LED_ON_OFF, boolToOutput(stateOnOff)); //Set On/Off LED
 }
-
-
-
